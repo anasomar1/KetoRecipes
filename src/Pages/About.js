@@ -88,6 +88,7 @@ const StyledAbout = styled.div`
 `;
 
 const ImageContainer = styled(Image)`
+  margin-bottom: 2rem;
   @media (max-width: 720px) {
     display: none;
   }
