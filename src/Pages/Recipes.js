@@ -2,48 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Container } from "../GlobalStyles";
 import Recipe from "../components/Recipe";
 import styled from "styled-components";
-
-const StyledRecipe = styled.div`
-  display: grid;
-  max-width: 1366px;
-  width: 80%;
-  margin: 0 auto;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-`;
-
-const StyledForm = styled.form`
-  width: 80%;
-  text-align: center;
-  margin: 0rem auto 5rem auto;
-  padding: 8rem;
-  height: 5vh;
-`;
-
-const SearchBar = styled.input`
-  font-family: inherit;
-  font-size: 1.6rem;
-  width: 50%;
-  padding: 1rem;
-  border-radius: 2rem;
-  margin-right: 1rem;
-
-  &:focus {
-    outline: none;
-  }
-`;
-const Button = styled.button`
-  font-size: 1.6rem;
-  font-family: inherit;
-  border-radius: 2rem;
-  padding: 1rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: white;
-    background: #373737;
-  }
-`;
+import { pageAnimation } from "../animations";
+import { motion } from "framer-motion";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -90,7 +50,7 @@ const Recipes = () => {
       {isLoading ? (
         <h1>Loading...</h1>
       ) : (
-        <StyledRecipe>
+        <StyledRecipe variants={pageAnimation} initial="hidden" animate="show">
           {recipes.map((recipe) => (
             <Recipe
               className="recipe"
@@ -103,5 +63,54 @@ const Recipes = () => {
     </Container>
   );
 };
+const StyledRecipe = styled(motion.div)`
+  display: grid;
+  max-width: 1366px;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
 
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    width: 60%;
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+`;
+
+const StyledForm = styled.form`
+  width: 80%;
+  text-align: center;
+  margin: 0rem auto 5rem auto;
+  padding: 8rem;
+  height: 5vh;
+`;
+
+const SearchBar = styled.input`
+  font-family: inherit;
+  font-size: 1.6rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin-right: 1rem;
+
+  &:focus {
+    outline: none;
+  }
+`;
+const Button = styled.button`
+  font-size: 1.6rem;
+  font-family: inherit;
+  border-radius: 2rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: white;
+    background: #373737;
+  }
+`;
 export default Recipes;

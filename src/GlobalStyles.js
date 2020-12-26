@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -14,6 +15,9 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: "Poppins", sans-serif;
+    overflow-x:hidden;
+    background: #373737;
+
   }
 
   h1{
@@ -51,6 +55,10 @@ color:#d1d1d1;
       color: #373737;
   font-size: 1.6rem;
   text-transform:capitalize;
+
+  &:hover{
+    color:#575a89;
+  }
   }
   ul{
       list-style:none;
@@ -61,15 +69,38 @@ color:#d1d1d1;
   .foodsList li{
     margin-bottom:2rem;
   }
+  
+
+  @media (max-width:1400px){
+    html{
+      font-size:9px;
+    }
+  @media (max-width:800px){
+    html{
+      font-size:8px;
+    }
+  @media (max-width:600px){
+    html{
+      font-size:7px;
+    }
+  }
 `;
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   background: #373737;
-  height: 90%;
 `;
 
-export const Image = styled.div`
+export const Image = styled(motion.div)`
   width: 50%;
-  height: 50vh;
   object-fit: cover;
+
+  @media (max-width: 750px) {
+    width: 75%;
+  }
+  @media (max-width: 600px) {
+    width: 85%;
+  }
+  @media (max-width: 400px) {
+    width: 95%;
+  }
 `;
 export default GlobalStyles;

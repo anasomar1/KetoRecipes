@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import HeroImg from "../images/HappyGirl.svg";
 import { Container, Image } from "../GlobalStyles";
+import { motion } from "framer-motion";
+import { pageAnimationX } from "../animations";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <Container>
+    <Container variants={pageAnimationX} initial="hidden" animate="show">
       <StyledHero>
         <HeroContent>
           <h1>
@@ -13,7 +16,9 @@ const Hero = () => {
           </h1>
           <h2>It's not just a diet... it's life well lived.</h2>
           <p>Learn how to lose weight without reducing your calories</p>
-          <Button>Lose Weight Now</Button>
+          <Link to="/recipes">
+            <Button>Find recipes</Button>
+          </Link>
         </HeroContent>
         <Image>
           <img src={HeroImg} alt="" />
@@ -31,14 +36,25 @@ const StyledHero = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
 `;
 
-const HeroContent = styled.div`
+const HeroContent = styled(motion.div)`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1300px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   color: #373737;
   font-size: 1.6rem;
   background: #0afcd7;
@@ -47,7 +63,6 @@ const Button = styled.button`
   padding: 1.5rem;
   font-weight: bold;
   border: none;
-  transition: all 0.2s ease-in-out;
 
   &:hover {
     background: #07c0a4;

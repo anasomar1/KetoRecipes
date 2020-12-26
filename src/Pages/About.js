@@ -2,10 +2,11 @@ import React from "react";
 import { Container, Image } from "../GlobalStyles";
 import styled from "styled-components";
 import Food1 from "../images/Food1.jpg";
+import { pageAnimation } from "../animations";
 
 const About = () => {
   return (
-    <Container>
+    <Container variants={pageAnimation} initial="hidden" animate="show">
       <StyledAbout>
         <h2>What's Keto</h2>
         <p>
@@ -19,9 +20,9 @@ const About = () => {
           cause significant reductions in blood sugar and insulin levels. This,
           along with the increased ketones, has some health benefits.
         </p>
-        <Image>
+        <ImageContainer>
           <img src={Food1} alt="" />
-        </Image>
+        </ImageContainer>
 
         <h2>What is ketosis?</h2>
         <p>
@@ -84,6 +85,12 @@ const StyledAbout = styled.div`
   margin: 0 auto;
   padding: 8rem 0;
   height: 100%;
+`;
+
+const ImageContainer = styled(Image)`
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;
 
 export default About;
