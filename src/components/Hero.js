@@ -1,29 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import HeroImg from "../images/HappyGirl.svg";
-import { Container } from "../GlobalStyles";
+import { Container, Image } from "../GlobalStyles";
 
 const Hero = () => {
   return (
-    <HeroContainer>
+    <Container>
       <StyledHero>
         <HeroContent>
           <h1>
             Eat fat, <span>lose</span> fat
           </h1>
           <h2>It's not just a diet... it's life well lived.</h2>
+          <p>Learn how to lose weight without reducing your calories</p>
           <Button>Lose Weight Now</Button>
         </HeroContent>
         <Image>
           <img src={HeroImg} alt="" />
         </Image>
       </StyledHero>
-    </HeroContainer>
+    </Container>
   );
 };
-const HeroContainer = styled(Container)`
-  background: #373737;
-`;
+
 const StyledHero = styled.div`
   width: 80%;
   max-width: 1366px;
@@ -38,15 +37,9 @@ const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const Image = styled.div`
-  width: 50%;
-  height: 50vh;
-  object-fit: cover;
-`;
 
 const Button = styled.button`
   color: #373737;
-  margin-top: 4rem;
   font-size: 1.6rem;
   background: #0afcd7;
   width: 20rem;

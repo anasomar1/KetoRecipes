@@ -27,8 +27,8 @@ const GlobalStyles = createGlobalStyle`
   }
   h2{
       font-size:3.2rem;
+      margin-bottom:2rem;
       color:#E1E1E1;
-      margin-bottom:3rem;
   }
   h3{
     font-size:2.4rem;
@@ -39,7 +39,12 @@ const GlobalStyles = createGlobalStyle`
   p,li{
 font-size:1.6rem;
 color:#d1d1d1;
-margin-bottom:0.5rem;
+}
+
+
+  p{
+    line-height:2;
+    margin-bottom:3rem;
   }
   a{
       text-decoration:none;
@@ -50,9 +55,21 @@ margin-bottom:0.5rem;
   ul{
       list-style:none;
   }
+  strong{
+    text-transform:capitalize;
+  }
+  .foodsList li{
+    margin-bottom:2rem;
+  }
 `;
 export const Container = styled.div`
   background: #373737;
+  height: 90%;
 `;
 
+export const Image = styled.div`
+  width: 50%;
+  height: 50vh;
+  object-fit: cover;
+`;
 export default GlobalStyles;

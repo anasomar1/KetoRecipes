@@ -26,7 +26,7 @@ const NavItem = styled.li`
   padding-left: 7rem;
 `;
 const NavLogo = styled.div`
-  font-family: "Quintessential", cursive;
+  font-family: "Inter", sans-serif;
 `;
 
 const Navbar = () => {

@@ -16,7 +16,7 @@ const StyledForm = styled.form`
   width: 80%;
   text-align: center;
   margin: 0rem auto 5rem auto;
-  padding: 4rem;
+  padding: 8rem;
   height: 5vh;
 `;
 
