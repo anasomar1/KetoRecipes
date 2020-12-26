@@ -66,7 +66,7 @@ color:#d1d1d1;
   text-transform:capitalize;
 
   &:hover{
-    color:#575a89;
+    color:#f2f2f2;
   }
   }
   ul{

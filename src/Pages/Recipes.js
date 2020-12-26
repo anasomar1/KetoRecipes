@@ -97,6 +97,10 @@ const SearchBar = styled.input`
   border-radius: 2rem;
   margin-right: 1rem;
 
+  @media (max-width: 600px) {
+    width: 70%;
+  }
+
   &:focus {
     outline: none;
   }

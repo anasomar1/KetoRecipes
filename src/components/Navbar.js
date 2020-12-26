@@ -25,7 +25,7 @@ const Navbar = () => {
   );
 };
 const NavContainer = styled.div`
-  background: #16f856;
+  background: #339966;
 `;
 
 const Nav = styled.nav`
@@ -53,5 +53,6 @@ const NavItem = styled.li`
 `;
 const NavLogo = styled.div`
   font-family: "Inter", sans-serif;
+  font-weight: bold;
 `;
 export default Navbar;

@@ -8,7 +8,7 @@ const About = () => {
   return (
     <Container variants={pageAnimation} initial="hidden" animate="show">
       <StyledAbout>
-        <h2>What's Keto</h2>
+        <h2>What's Keto?</h2>
         <p>
           Keto basics The ketogenic diet is a very low carb, high fat diet that
           shares many similarities with the Atkins and low carb diets. It
@@ -88,7 +88,7 @@ const StyledAbout = styled.div`
 `;
 
 const ImageContainer = styled(Image)`
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   @media (max-width: 720px) {
     display: none;
   }
