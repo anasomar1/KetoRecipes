@@ -42,7 +42,7 @@ const Recipes = () => {
             setSearch(e.target.value);
           }}
           value={search}
-          placeholder="Search"
+          placeholder="Find more recipes"
         />
         <Button type="submit">Search</Button>
       </StyledForm>

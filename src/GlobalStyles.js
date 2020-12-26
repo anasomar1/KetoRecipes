@@ -11,6 +11,15 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 10px;
+    @media (max-width:1400px){
+       font-size:9px;
+    }
+  @media (max-width:800px){
+      font-size:8px;
+    }
+  @media (max-width:600px){
+      font-size:7px;
+    }
   }
 
   body {
@@ -69,21 +78,9 @@ color:#d1d1d1;
   .foodsList li{
     margin-bottom:2rem;
   }
+
   
 
-  @media (max-width:1400px){
-    html{
-      font-size:9px;
-    }
-  @media (max-width:800px){
-    html{
-      font-size:8px;
-    }
-  @media (max-width:600px){
-    html{
-      font-size:7px;
-    }
-  }
 `;
 export const Container = styled(motion.div)`
   background: #373737;
