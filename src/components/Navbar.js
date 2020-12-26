@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavContainer = styled.div`
   background: #16f856;
@@ -32,16 +33,18 @@ const Navbar = () => {
   return (
     <NavContainer>
       <Nav>
-        <NavLogo>Ketogenic Diet</NavLogo>
+        <Link to="/">
+          <NavLogo>Ketogenic Diet</NavLogo>
+        </Link>
         <NavList>
           <NavItem>
-            <a href="#">contact us</a>
+            <Link to="/">Home</Link>
           </NavItem>
           <NavItem>
-            <a href="#">recipes</a>
+            <Link to="/recipes">recipes</Link>
           </NavItem>
           <NavItem>
-            <a href="#">about keto</a>
+            <Link to="/about">about keto</Link>
           </NavItem>
         </NavList>
       </Nav>

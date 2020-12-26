@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -18,10 +19,15 @@ const GlobalStyles = createGlobalStyle`
   h1{
       font-size:6.4rem;
       color:white;
+      margin-bottom:3rem;
+  }
+
+  h1 span{
+    color:#057805;
   }
   h2{
       font-size:3.2rem;
-      color:#515151;
+      color:#E1E1E1;
   }
   p{
 font-size:1.6rem;
@@ -36,6 +42,9 @@ color:#5D5D5D;
   ul{
       list-style:none;
   }
+`;
+export const Container = styled.div`
+  background: #373737;
 `;
 
 export default GlobalStyles;
