@@ -3,6 +3,24 @@ import styled from "styled-components";
 import HeroImg from "../images/HappyGirl.svg";
 import { Container } from "../GlobalStyles";
 
+const Hero = () => {
+  return (
+    <HeroContainer>
+      <StyledHero>
+        <HeroContent>
+          <h1>
+            Eat fat, <span>lose</span> fat
+          </h1>
+          <h2>It's not just a diet... it's life well lived.</h2>
+          <Button>Lose Weight Now</Button>
+        </HeroContent>
+        <Image>
+          <img src={HeroImg} alt="" />
+        </Image>
+      </StyledHero>
+    </HeroContainer>
+  );
+};
 const HeroContainer = styled(Container)`
   background: #373737;
 `;
@@ -42,24 +60,5 @@ const Button = styled.button`
     background: #07c0a4;
   }
 `;
-
-const Hero = () => {
-  return (
-    <HeroContainer>
-      <StyledHero>
-        <HeroContent>
-          <h1>
-            Eat fat, <span>lose</span> fat
-          </h1>
-          <h2>It's not just a diet... it's life well lived.</h2>
-          <Button>Lose Weight Now</Button>
-        </HeroContent>
-        <Image>
-          <img src={HeroImg} alt="" />
-        </Image>
-      </StyledHero>
-    </HeroContainer>
-  );
-};
 
 export default Hero;

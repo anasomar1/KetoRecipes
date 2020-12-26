@@ -1,10 +1,105 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "../GlobalStyles";
+import Recipe from "../components/Recipe";
+import styled from "styled-components";
+
+const StyledRecipe = styled.div`
+  display: grid;
+  max-width: 1366px;
+  width: 80%;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+`;
+
+const StyledForm = styled.form`
+  width: 80%;
+  text-align: center;
+  margin: 0rem auto 5rem auto;
+  padding: 4rem;
+  height: 5vh;
+`;
+
+const SearchBar = styled.input`
+  font-family: inherit;
+  font-size: 1.6rem;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin-right: 1rem;
+
+  &:focus {
+    outline: none;
+  }
+`;
+const Button = styled.button`
+  font-size: 1.6rem;
+  font-family: inherit;
+  border-radius: 2rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: white;
+    background: #373737;
+  }
+`;
 
 const Recipes = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("chicken");
+  const [isLoading, setIsLoading] = useState(true);
+  const APP_ID = "4f91a5c7";
+  const APP_KEY = "4a829ae80b48951a2b9f96ca16b2e0dc";
+
+  const url = `https://api.edamam.com/search?q=${query}&ingr=7&nutrients%5BCHOCDF%5D=20&app_id=${APP_ID}&app_key=${APP_KEY}`;
+  useEffect(() => {
+    const getData = () => {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          setRecipes(data.hits);
+          setIsLoading(false);
+        })
+        .catch((err) => console.log(err));
+    };
+
+    getData();
+  }, [url]);
+
+  const getSearch = (e) => {
+    e.preventDefault();
+    setQuery(search);
+  };
+  console.log(url);
   return (
     <Container>
-      <h1>Recipes</h1>
+      <StyledForm onSubmit={getSearch}>
+        <SearchBar
+          type="text"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          value={search}
+          placeholder="Search"
+        />
+        <Button type="submit">Search</Button>
+      </StyledForm>
+
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <StyledRecipe>
+          {recipes.map((recipe) => (
+            <Recipe
+              className="recipe"
+              recipe={recipe}
+              key={recipe.recipe.calories}
+            />
+          ))}
+        </StyledRecipe>
+      )}
     </Container>
   );
 };

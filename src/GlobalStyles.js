@@ -28,10 +28,18 @@ const GlobalStyles = createGlobalStyle`
   h2{
       font-size:3.2rem;
       color:#E1E1E1;
+      margin-bottom:3rem;
   }
-  p{
+  h3{
+    font-size:2.4rem;
+    margin-bottom:3rem;
+
+      color:#E1E1E1;
+  }
+  p,li{
 font-size:1.6rem;
-color:#5D5D5D;
+color:#d1d1d1;
+margin-bottom:0.5rem;
   }
   a{
       text-decoration:none;

@@ -25,7 +25,7 @@ const NavList = styled.ul`
 const NavItem = styled.li`
   padding-left: 7rem;
 `;
-const NavLogo = styled.a`
+const NavLogo = styled.div`
   font-family: "Quintessential", cursive;
 `;
 
