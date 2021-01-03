@@ -1,1 +1,1 @@
-A react-based website to find Keto-friendly recipes using Edamam API.
+Find Keto-friendly recipes using Edamam API. Built with React
