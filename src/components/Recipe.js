@@ -20,11 +20,13 @@ const Recipe = ({ recipe }) => {
       <Image>
         <img src={image} style={{ borderRadius: "50%" }} alt={label} />
       </Image>
-      <p>
-        <strong>Servings: </strong> {recipe.recipe.yield}
+      <p style={{ marginBottom: "1px" }}>
+        <strong> {recipe.recipe.yield} </strong>
+        <p style={{ display: "inline" }}>servings.</p>
       </p>
       <p>
-        <strong>Carbs</strong>: {carbs} <strong>Per Serving</strong>
+        <strong>{carbs}</strong>
+        <p style={{ display: "inline" }}> carbs per perving</p>
       </p>
     </RecipeContent>
   );
