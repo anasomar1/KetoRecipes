@@ -65,9 +65,6 @@ color:#d1d1d1;
   font-size: 1.6rem;
   text-transform:capitalize;
 
-  &:hover{
-    color:#f2f2f2;
-  }
   }
   ul{
       list-style:none;

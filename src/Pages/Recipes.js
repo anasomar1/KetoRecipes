@@ -94,6 +94,8 @@ const SearchBar = styled.input`
   font-size: 1.6rem;
   width: 50%;
   padding: 1rem;
+  outline: none;
+  border: none;
   border-radius: 2rem;
   margin-right: 1rem;
 
@@ -107,14 +109,16 @@ const SearchBar = styled.input`
 `;
 const Button = styled.button`
   font-size: 1.6rem;
+  border: none;
   font-family: inherit;
   border-radius: 2rem;
+  cursor: pointer;
   padding: 1rem;
   transition: all 0.3s ease;
+  background: #0afcd7;
 
   &:hover {
-    color: white;
-    background: #373737;
+    background: #07c0a4;
   }
 `;
 export default Recipes;

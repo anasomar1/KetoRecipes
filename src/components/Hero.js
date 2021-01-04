@@ -63,6 +63,7 @@ const Button = styled(motion.button)`
   padding: 1.5rem;
   font-weight: bold;
   border: none;
+  cursor: pointer;
 
   &:hover {
     background: #07c0a4;

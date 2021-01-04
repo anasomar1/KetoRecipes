@@ -42,6 +42,7 @@ const NavList = styled.ul`
   text-decoration: none;
   display: flex;
   justify-content: space-around;
+  width: 30%;
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -49,7 +50,9 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled.li`
-  padding-left: 7rem;
+  &:hover a {
+    border-bottom: 1px solid #0afcd7;
+  }
 `;
 const NavLogo = styled.div`
   font-family: "Inter", sans-serif;
